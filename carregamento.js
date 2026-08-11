@@ -1,4 +1,4 @@
-var urlSimulacao = "https://ici002.capef.com.br/apisimuladorcvme";
+var urlSimulacao = "https://ici002.capef.com.br/apisimuladorcvme/Simulador/Criterios";
 
 async function carregarTaxas() {
     try {
@@ -17,12 +17,21 @@ async function carregarTaxas() {
         const taxaAssistido = dados.find(
             item => item.descricao === "Taxa de carregamento (sobre assistido)"
         );
-      
+
         if (taxaCarregamento) {
-            document.getElementById("txcarregamento").value = taxaCarregamento.cv;
+            document.getElementById("txcarregamento").value =
+                (taxaCarregamento.cv * 100).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }) + "%";
         }
+
         if (taxaAssistido) {
-            document.getElementById("txadminunica").value = taxaAssistido.cv;
+            document.getElementById("txadminunica").value =
+                (taxaAssistido.cv * 100).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }) + "%";
         }
 
     } catch (error) {
