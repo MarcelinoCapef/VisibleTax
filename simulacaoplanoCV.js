@@ -19,7 +19,7 @@ if (preloaderSimulation) {
  $("#cpf-simulator").mask("999.999.999-99");
 
 var urlConsulta = "https://ici002.capef.com.br/apiconsulta";
-var urlSimulacao = "https://ici002.capef.com.br/apisimuladorcvme";
+var urlSimulacao = "https://ici002.capef.com.br/apiplanomercado";
 
 async function setupToken({ url }) {
         const authResponse = await fetch(`${url}/Auth/Access-Token`, {
