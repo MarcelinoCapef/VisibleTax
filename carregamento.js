@@ -1,4 +1,4 @@
-var urlSimulacao = "https://ici002.capef.com.br/apisimuladorcvme/Simulador/Criterios";
+var urlSimulacao = "https://ici002.capef.com.br/apiplanomercado/Simulador/Criterios";
 
 async function carregarTaxas() {
     try {
