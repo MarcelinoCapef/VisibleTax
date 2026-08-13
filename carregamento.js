@@ -18,8 +18,8 @@ async function carregarTaxas() {
             item => item.descricao === "Taxa de carregamento (sobre assistido)"
         );
 
-        if (taxaCarregamento) {
-            document.getElementById("txcarregamento").value =
+         if (taxaCarregamento) {
+            document.getElementById("txcarregamento").textContent =
                 (taxaCarregamento.cv * 100).toLocaleString("pt-BR", {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
@@ -27,7 +27,7 @@ async function carregarTaxas() {
         }
 
         if (taxaAssistido) {
-            document.getElementById("txadminunica").value =
+            document.getElementById("txadminunica").textContent =
                 (taxaAssistido.cv * 100).toLocaleString("pt-BR", {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
