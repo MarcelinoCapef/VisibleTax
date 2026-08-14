@@ -18,20 +18,26 @@ async function carregarTaxas() {
             item => item.descricao === "Taxa de carregamento (sobre assistido)"
         );
 
-         if (taxaCarregamento) {
-            document.getElementById("txcarregamento").textContent =
-                (taxaCarregamento.cv * 100).toLocaleString("pt-BR", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                }) + "%";
+        if (taxaCarregamento) {
+            const valor = (taxaCarregamento.cv * 100).toLocaleString("pt-BR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + "%";
+
+            document.querySelectorAll(".txcarregamento").forEach(elemento => {
+                elemento.textContent = valor;
+            });
         }
 
         if (taxaAssistido) {
-            document.getElementById("txadminunica").textContent =
-                (taxaAssistido.cv * 100).toLocaleString("pt-BR", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                }) + "%";
+            const valor = (taxaAssistido.cv * 100).toLocaleString("pt-BR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }) + "%";
+
+            document.querySelectorAll(".txadminunica").forEach(elemento => {
+                elemento.textContent = valor;
+            });
         }
 
     } catch (error) {
